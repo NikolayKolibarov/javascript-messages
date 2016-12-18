@@ -1,0 +1,30 @@
+<section id="viewMyMessages">
+    <h1>My Messages</h1>
+    {{#hasMessages}}
+    <div class="messages" id="myMessages">
+        <table>
+            <thead>
+            <tr>
+                <th>From</th>
+                <th>Message</th>
+                <th>Date Received</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#messages}}
+            <tr>
+                <td>{{ sender }}</td>
+                <td>{{ text }}</td>
+                <td>{{ date }}</td>
+            </tr>
+            {{/messages}}
+            </tbody>
+        </table>
+    </div>
+    {{/hasMessages}}
+    {{^messages}}
+    <div class="messages">
+        <h3>You haven't received any messages.</h3>
+    </div>
+    {{/messages}}
+</section>
